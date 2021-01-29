@@ -1,4 +1,7 @@
 class User < ApplicationRecord
-  has_many :posts
-  accepts_nested_attributes_for :posts
+  with_options presence: true do
+    validates :first_name
+    validates :last_name
+    validates :email
+  end
 end

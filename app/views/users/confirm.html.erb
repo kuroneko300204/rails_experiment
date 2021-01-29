@@ -1,0 +1,10 @@
+<h2>以下の詳細を確認してください</h2>
+<%= render 'detail', user: @user %>
+<%= form_for @user do |f| %>
+  <%= f.hidden_field :first_name %>
+  <%= f.hidden_field :last_name %>
+  <%= f.hidden_field :email %>
+
+  <%= f.submit "送信" %>
+  <%= f.submit "戻る", :name => "back" %>
+<% end %>
