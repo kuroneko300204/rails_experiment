@@ -1,4 +1,6 @@
-<%= form_for @user, url: confirm_users_path(@user) do |f| %>
+<h2>新規登録(1)</h2>
+
+<%= form_for @user, url: next_users_path(@user) do |f| %>
   <%= f.label :first_name %>
   <%= f.text_field :first_name %>
   
@@ -6,7 +8,12 @@
   <%= f.text_field :last_name %>
   
   <%= f.label :email %>
-  <%= f.text_field :email %>  
+  <%= f.text_field :email %>
+
+  <%= f.hidden_field :age %>
+  <%= f.hidden_field :gender %>
+  <%= f.hidden_field :phone_number %>
+  <%= f.hidden_field :address %>
   
-  <%= f.submit "確認画面へ" %>
+  <%= f.submit "次へ" %>
 <% end %>

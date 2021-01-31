@@ -1,0 +1,23 @@
+<h2>新規登録(2)</h2>
+
+<%= form_for @user, url: confirm_users_path(@user) do |f| %>
+  <%= f.hidden_field :first_name %>
+  <%= f.hidden_field :last_name %>
+  <%= f.hidden_field :email %>
+  
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+
+  <%= f.label :gender %>
+  <%= f.collection_radio_buttons :gender, User.genders, :last, :first %>
+  
+
+  <%= f.label :phone_number %>
+  <%= f.telephone_field :phone_number %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  
+  <%= f.submit "確認画面へ" %>
+  <%= f.submit "戻る", :name => "back" %>
+<% end %>
